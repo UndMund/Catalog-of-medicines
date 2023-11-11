@@ -20,6 +20,7 @@ public class Medicine {
     private Long id;
     @Column(unique = true, nullable = false)
     private String name;
-    @ManyToMany(mappedBy = "medicines")
+    @ManyToMany(mappedBy = "medicines", fetch = FetchType.LAZY)
+    @Builder.Default
     private Set<Pharmacy> pharmacies = new HashSet<>();
 }

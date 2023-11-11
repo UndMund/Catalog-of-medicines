@@ -30,7 +30,8 @@ public class Pharmacy {
             @AttributeOverride(name = "houseNumber", column = @Column(name = "house_number"))
     })
     private Address address;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
+    @Builder.Default
     @JoinTable(
             name = "pharmacy_medicine",
             joinColumns = @JoinColumn(name = "pharmacy_id"),
