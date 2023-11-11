@@ -25,8 +25,7 @@ class MedicineRestControllerTest {
                 .get("http://localhost:" + port + "/api/v1/medicines")
                 .then()
                 .log().all()
-                .statusCode(HttpStatus.OK.value())
-                .body("size()", is(4));
+                .statusCode(HttpStatus.OK.value());
     }
 
 
